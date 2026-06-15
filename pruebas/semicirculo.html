@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semicirculo</title>
+  </head>
+  <body>
+    <main>
+      <div class="container-circle">
+        <div class="logo">
+          <svg height="400" width="400">
+            <circle
+              class="circle"
+              cx="100"
+              cy="100"
+              r="95"
+              stroke="#231f20"
+              stroke-width="10"
+              fill-opacity="100"
+            />
+          </svg>
+        </div>
+      </div>
+    </main>
+    <style>
+      * {
+        margin: 0;
+        padding: 0%;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-color: #1b1616;
+        margin: 0;
+        padding: 0%;
+      }
+      main{
+        width: 90%;
+        height: 100vh;
+        margin: 5%;
+        overflow: hidden;
+
+
+      }
+      svg {
+        /* 
+    * uso vh para mantenerlo fijado en la pared. 
+    * Usar responsive para ir ajustando */
+        position: relative;
+        left: -20vh;
+        top: 50vh;
+      }
+
+      /* centro circulo */
+      .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      /* animacion para el centro */
+      /* .logo {
+        width: 140px;
+        height: 140px;
+        background-color: #231f20;
+        border-radius: 100px;
+        opacity: 0;
+        animation: fadeIn 0.75s linear forwards;
+        animation-delay: 1s;
+      } */
+
+      /* container de circulos */
+
+      .container-circle {
+        position: relative;
+        width: 50%;
+        height: auto;
+        left: 50;
+      }
+
+      /* dar estilo al semi circulo */
+      .circle {
+        position: absolute;
+        stroke: #ea8111;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: stroke 2s ease-out forwards;
+        left: 0;
+        stroke-width: 1;
+      }
+
+      @keyframes stroke {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </body>
+</html>

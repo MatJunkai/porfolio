@@ -1,0 +1,48 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: ;
+    font-family: "Montserrat", sans-serif;
+    color: var(--text-color);
+    overflow: hidden;
+}
+.container-gallery{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    overflow-x: hidden;
+    margin-right: -150px;  
+    position: relative; 
+}
+.card{
+    width: 100%;
+    height: 100%;
+    /* justify-content: center;
+    align-items: center; */
+    font-size: 2rem;
+    color: #fff;
+    margin: 0;
+
+
+}
+.vertical-text {
+    background-color: blueviolet;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+        padding-bottom: 20px;
+        /*position:absolute;
+        right: 1px;
+        bottom: 500px;
+        height: 1000px;
+        falta darle el 100% height */
+        border: none;
+        background-size: 100% 100% ;
+        height: 100%;
+      }
+
+      

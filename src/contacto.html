@@ -1,0 +1,52 @@
+<!-- los estilos no se conservan a excepcion de los que indique con un comentario -->
+<div class="container-contact">
+    <!-- contenedor principal -->
+    <div class="flip-card">
+        <!-- contiene las dos caras del div -->
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h2>Contactame</h2>
+                <p>Telefono: +34 644 29 16 61</p>
+                <p>Email: matiasiparraguirre.info@gmail.com</p>
+                <button id="flipFormulario" onclick="flip()">contactar</button>
+            </div>
+            <!-- esta oculto por defecto -->
+            <div class="flip-card-back">
+                <section class="contact-info">
+                    <h2>Contactame</h2>
+                    <form action="">
+                        <label for="name"></label>
+                        <input type="text" id="name" name="name" placeholder="Nombre" required>
+                        <label for="email"></label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <label for="message"></label>
+                        <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..."
+                            required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                    <!-- mantener solo la clase button y el onclick con lo que cotenga -->
+                    <button class="botonVolver" onclick="flipBack()">
+                        < </button>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //crear boton que al hacer click gire el div mostrando el formulario de contacto
+
+    /*explicacion de que hace:
+    1. dos funciones que seleccionan la clase "flip-card-inner" y toggle ejerce como un "boolean" (ej: si esta activado lo desactiva, si esta apagado lo enciende y viceversa)
+    2. la clase flipper hace el flip desde css
+    */
+
+    function flip() {
+        const cardInner = document.querySelector('.flip-card-inner');
+        cardInner.classList.toggle('flipped');
+    }
+    function flipBack() {
+        const cardInnerBack = document.querySelector('.flip-card-inner');
+        cardInnerBack.classList.toggle('flipped');
+    }
+
+</script>

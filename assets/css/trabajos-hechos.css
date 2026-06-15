@@ -1,0 +1,192 @@
+/* Estilos globales vienen de styles.css - NO DUPLICAR */
+      .container-main-carousel {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center; /* Centrado vertical */
+        justify-content: flex-end; /* Lo llevamos a la derecha */
+        overflow: hidden;
+        overflow-x: hidden;
+        margin-right: -150px;
+      }
+
+      .circle-carousel {
+        display: flex;
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        margin-right: -250px; /* LA CLAVE: Saca la mitad del círculo (radio) fuera */
+      }
+      
+      .circle {
+        position: absolute;
+        /* right: -200%; */
+
+        top: 15%;
+        width: 300px;
+        height: 350px;
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        /*   position: relative; */
+        transform-style: preserve-3d;
+        transition: transform 1s ease;
+      }
+      /* .side-arc {
+        position: absolute;
+        left: -150px;
+        top: 15%;
+        width: 300px;
+        height: 350px;
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+        pointer-events: none;
+      } */
+
+      .card {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        /* background: #222; */
+        color: white;
+        /* border-radius: 50%; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        left: 50%;
+        top: 50%;
+        transform-origin: center center;
+        opacity: 0.5;
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+        overflow: hidden;
+        pointer-events: auto;
+
+      }
+      .card a{
+        cursor: pointer;
+        pointer-events: auto;
+      }
+      .card a img{
+        max-width: 200px;
+        
+      }
+
+      .card.active {
+        opacity: 1;
+        /* Eliminamos el transform del CSS para que no choque con el de JS */
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Opcional: un brillo en lugar de escala */
+      }
+
+      .container-btn{
+        
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        position: absolute;
+        /* bottom: 50%; */
+        align-items: right;
+        justify-content: right;
+        top:30%;
+        
+        
+      }
+
+      .btn {
+        /* position: absolute; */
+        /* top: 50%; */
+        
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .prev {
+        left: -60px;
+      }
+
+      .next {
+        right: -60px;
+      }
+
+
+      /* LIGHT BOX */
+      /* lightbox */
+
+.lightbox-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.lightbox-overlay.lightbox-active{
+    display: block;
+}
+.container-span-description{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  bottom: 10px;
+  font-family: 'Jost';
+
+}
+
+.container-span-description span{
+  /* text-align: top; */
+  /* text-justify: top; */
+  font-family: 'Jost';
+
+}
+
+.lightbox img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    max-width: 800px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    margin-bottom: 2%;
+}
+
+
+/* .textoInformativo{
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 1%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-family: 'Jost';
+}
+
+.textoInformativo p{
+    color: black;
+    font-family: 'Jost';
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: medium;
+
+} */

@@ -1,0 +1,811 @@
+:root {
+  --bg-color: #1a1614;
+  --accent-color: #d17a2d;
+  /* Naranja quemado/elegante */
+  --text-color: #d1d1d1;
+  --primary-font: "Montserrat", sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--bg-color);
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
+  overflow: hidden;
+  background: repeating-linear-gradient(90deg, #0002 0 1px, #0000 0 5vw) -2.5vw 0 / 100% 60%,
+    linear-gradient(#0002, #0000 30% 70%, #0001) 50% 0% / 100% 60%,
+    linear-gradient(#2d2420 0 0) 50% 0% / 5vw 60%,
+    linear-gradient(#2a2218 0 0) 50% 0% / 15vw 60%,
+    linear-gradient(#262018 0 0) 50% 0% / 25vw 60%,
+    linear-gradient(#222018 0 0) 50% 0% / 35vw 60%,
+    linear-gradient(#1e1a14 0 0) 50% 0% / 45vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 55vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 65vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 75vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 85vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 95vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 105vw 60%,
+    radial-gradient(100vw 50vw, #0002, #0000),
+    conic-gradient(from 170.5deg at 50% calc(60% - 14.8vw),
+      #2d2420 19deg,
+      #0000 0) 0 100% / 100vw 100%,
+    conic-gradient(from 153deg at 50% calc(60% - 14.8vw),
+      #2a2218 54deg,
+      #0000 0),
+    conic-gradient(from 140deg at 50% calc(60% - 14.8vw),
+      #262018 80deg,
+      #0000 0),
+    conic-gradient(from 130deg at 50% calc(60% - 14.8vw),
+      #222018 100deg,
+      #0000 0),
+    conic-gradient(from 123deg at 50% calc(60% - 14.8vw),
+      #1e1a14 114deg,
+      #0000 0),
+    conic-gradient(from 118.5deg at 50% calc(60% - 14.8vw),
+      #1a1614 123deg,
+      #0000 0),
+    conic-gradient(from 114.5deg at 50% calc(60% - 14.8vw),
+      #1a1614 131deg,
+      #0000 0),
+    conic-gradient(from 111.5deg at 50% calc(60% - 14.8vw),
+      #1a1614 137deg,
+      #0000 0),
+    conic-gradient(from 109.2deg at 50% calc(60% - 14.8vw),
+      #1a1614 141.6deg,
+      #0000 0),
+    conic-gradient(from 107.3deg at 50% calc(60% - 14.8vw),
+      #1a1614 145.3deg,
+      #0000 0),
+    #1a1614;
+  background-repeat: no-repeat;
+}
+
+/* Fondo con gradientes */
+
+/* home */
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* El cuadro naranja que enmarca todo */
+.border-frame {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--accent-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+/* El círculo/arco de la izquierda */
+.side-arc {
+  position: absolute;
+  left: -150px;
+  top: 15%;
+  width: 400px;
+  height: 450px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Menú de Navegación */
+.nav-menu {
+  position: absolute;
+  left: 15%;
+  bottom: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  z-index: 10;
+  background-color: transparent;
+  width: fit-content;
+}
+
+.nav-menu a {
+  margin-bottom: 3%;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  transition: color 0.3s;
+  width: fit-content;
+}
+
+.nav-item:hover {
+  color: var(--accent-color);
+}
+
+
+/* Indentación escalonada del menú */
+.indent-1 {
+  margin-left: 30px;
+}
+
+.indent-2 {
+  margin-left: 60px;
+}
+
+/* Bloque de texto inferior derecho - para contenido estático o inyectado */
+.description-text {
+  position: absolute;
+  bottom: 80px;
+  right: 50px;
+  width: 250px;
+  text-align: right;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* Bloque de descripción separado para elementos estáticos */
+.description-block {
+  position: absolute;
+  bottom: 80px;
+  right: 50px;
+  width: 250px;
+  text-align: right;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* Barra lateral con "PORFOLIO" */
+.sidebar-left {
+  position: absolute;
+  bottom: 20px;
+  left: -2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+  padding-bottom: 20px;
+  position: absolute;
+  right: 1px;
+  bottom: -10px;
+}
+
+
+
+.bottom-right-logo {
+  position: absolute;
+  bottom: 80px;
+  right: 70px;
+}
+
+.container-icons {
+  display: flex;
+  position: fixed;
+  bottom: 18px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-left: 1%;
+  margin-bottom: 5px;
+}
+
+.container-icons img {
+  width: 18px;
+  max-height: 18px;
+
+}
+
+.git-icon {
+  height: 15px;
+}
+
+.logoContainer img {
+  position: fixed;
+  width: 60px;
+
+}
+
+.seccion-include {
+  display: block;
+}
+
+/* Contenedor principal para contenido inyectado - removido */
+
+
+/* habilidades */
+.main-container-hab {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.section-progamacion{
+  position: absolute;
+  bottom: 50%;
+  left: 60%;
+  width: 100%;
+  display: block;
+  
+}
+.container-lenguaje{
+  display: block;
+}
+.container-img-habilidades{ 
+  width: fit-content;
+  margin-top: 3px;
+  padding: 5px 10px 1px 10px;
+  background-color: rgba(245, 243, 242, 0.9);
+  border-radius: 15px;
+  background-size: fit-content;
+
+}
+.section-soft-skills{
+  margin-top: 50px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 100%;
+  display: block;
+  
+}
+
+/* sobre mi */
+
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
+
+/* Estilos para contenido dinámico inyectado */
+/* #main-content {
+  position: static;
+  display: block;
+  width: auto;
+  height: auto;
+  text-align: left;
+  padding: 20px;
+} */
+
+.container-sobre-mi-principal {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  /* margin-right: 20%; */
+}
+
+.container-img {
+  width: 20%;
+  position: absolute;
+  top: -10%;
+  right: 120%;
+  transform: translate(-50%, -50%);
+}
+
+.container-img img {
+  width: 100px;
+  height: 180px;
+
+}
+
+.container-parrafo {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  display: block;
+
+}
+
+.container-parrafo p {
+  font-size: 15px;
+  line-height: 1.2;
+  font-style: italic;
+  text-align: justify;
+  padding-left: 15%;
+    padding-right: 15%;
+
+}
+
+.boton-contacto {
+  margin-top: 20px;
+  margin-right: 25%;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: julius sans one, sans-serif;
+  width: 50%;
+  text-align: center;
+}
+
+
+/* trabajos hechos */
+.container-main-carousel {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  /* Centrado vertical */
+  justify-content: flex-end;
+  /* Lo llevamos a la derecha */
+  overflow: hidden;
+  overflow-x: hidden;
+  margin-right: -150px;
+}
+
+.circle-carousel {
+  display: flex;
+  position: absolute;
+  top: 10%;
+  width: 500px;
+  height: 500px;
+  margin-right: -250px;
+  /* LA CLAVE: Saca la mitad del círculo (radio) fuera */
+}
+
+.circle {
+  position: absolute;
+  /* right: -200%; */
+
+  top: 15%;
+  /* width: 300px;
+        height: 350px; */
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  /*   position: relative; */
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+/* .side-arc {
+        position: absolute;
+        left: -150px;
+        top: 15%;
+        width: 300px;
+        height: 350px;
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+        pointer-events: none;
+      } */
+
+.card {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* background: #222; */
+  color: white;
+  /* border-radius: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  opacity: 0.5;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  overflow: hidden;
+  pointer-events: auto;
+
+}
+
+.card a {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.card a img {
+  max-width: 200px;
+
+}
+
+.card.active {
+  opacity: 1;
+  /* Eliminamos el transform del CSS para que no choque con el de JS */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  /* Opcional: un brillo en lugar de escala */
+}
+
+.container-btn {
+
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  position: absolute;
+  /* bottom: 50%; */
+  right: 1%;
+  align-items: right;
+  justify-content: right;
+  bottom: 10%;
+
+
+}
+
+.btn {
+  /* position: absolute; */
+  /* top: 50%; */
+
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: -60px;
+}
+
+.next {
+  right: -60px;
+}
+
+
+/* LIGHT BOX */
+/* lightbox */
+
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.lightbox-overlay.lightbox-active {
+  display: block;
+}
+
+.container-span-description {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  bottom: 10px;
+  font-family: 'Jost';
+
+}
+
+.container-span-description span {
+  /* text-align: top; */
+  /* text-justify: top; */
+  font-family: 'Jost';
+
+}
+
+.lightbox img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  max-width: 800px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-bottom: 2%;
+}
+
+
+/* .textoInformativo{
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 1%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-family: 'Jost';
+}
+
+.textoInformativo p{
+    color: black;
+    font-family: 'Jost';
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: medium;
+
+} */
+
+/* flip card styles */
+
+.container-contact {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  /* transform-style es necesario para hacer el efecto */
+  transform-style: preserve-3d;
+}
+
+/* .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    } */
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* backface se necesita para que no se vea el segundo div que tiene la parte trasera del card */
+  backface-visibility: hidden;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front {
+  background: linear-gradient(90deg, rgba(131, 131, 131, 0.2) 0%, rgba(209, 122, 45, 0.2)50%, rgba(131, 131, 131, 0.2) 100%);
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease infinite;
+  color: rgb(255, 255, 255);
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.flip-card-back {
+  background: linear-gradient(90deg, rgba(131, 131, 131, 0.2) 0%, rgba(209, 122, 45, 0.2)50%, rgba(131, 131, 131, 0.2) 100%);
+  color: white;
+  /* transform mantener para que se vea correctamente */
+  transform: rotateY(180deg);
+
+}
+
+.contact-info {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  color: var(--text-color);
+
+}
+
+.contact-info form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+.contact-info form input {
+  padding: 5px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: 1px solid var(--accent-color);
+  background: rgba(131, 131, 131, 0.2);
+  color: var(--text-color);
+
+}
+
+.contact-info form label {
+  display: flex;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+}
+
+.contact-info textarea {
+  resize: vertical;
+  max-height: 60px;
+  min-height: 30px;
+  background: rgba(131, 131, 131, 0.2);
+  padding: 5px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 1px solid var(--accent-color);
+}
+
+.contact-info form button {
+  font-family: var(--primary-font);
+  background-color: #863f08;
+  background: linear-gradient(90deg, rgba(131, 131, 131, 1) 0%, rgba(209, 122, 45, 1)50%, rgba(131, 131, 131, 1) 100%);
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease infinite;
+  color: white;
+  font-weight: 800;
+  border: none;
+  padding: 5px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  cursor: pointer;
+}
+
+.contact-info form button:hover {
+  background-color: #863f08;
+  background: linear-gradient(90deg, rgb(199, 106, 0) 0%, rgb(122, 61, 7)50%, rgb(34, 21, 1) 100%);
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease infinite;
+}
+
+/* esta clase es la que se añade desde js al hacer click y genera el flip */
+.flipped {
+  transform: rotateY(180deg);
+}
+
+#flipFormulario {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, rgba(131, 131, 131, 1) 0%, rgba(209, 122, 45, 1)50%, rgba(131, 131, 131, 1) 100%);
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease-in-out infinite;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#flipFormulario:hover {
+  background-color: #863f08;
+  background: linear-gradient(90deg, rgb(199, 106, 0) 0%, rgb(122, 61, 7)50%, rgb(34, 21, 1) 100%);
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease-in-out infinite;
+  /* Un tono más oscuro para el hover */
+}
+
+.botonVolver {
+  /* width: 100px;
+        height: 50px; */
+  background: none;
+  font-size: x-large;
+  padding: 5px 8px;
+  margin: 0;
+  border: none;
+  border-radius: 20%;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  color: var(--text-color);
+
+}
+
+.botonVolver:hover {
+  color: var(--accent-color);
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease-in-out infinite;
+}
+
+
+
+/* RIPPLE EFFECT - Efecto de ondas al hacer click */
+
+.ripple-button {
+  position: relative;
+  overflow: visible;
+}
+
+.ripple-button .ripple-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  /* background-color: rgba(255, 250, 250, 0.2); */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+
+}
+
+.ripple-button .ripple-bg::before,
+.ripple-button .ripple-bg::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  content: "";
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0;
+  pointer-events: none;
+
+}
+
+.ripple-button:hover .ripple-bg {
+  background-color: rgba(255, 255, 255, 0.0.1);
+  background-size: 100px 100px;
+
+}
+
+/* CLASE ACTIVADORA - Se agrega cuando se hace click */
+.ripple-bg.active::before {
+  animation: ripple-wave 1s ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.ripple-bg.active::after {
+  animation: ripple-wave 1s ease-in-out;
+  animation-delay: 0.3s;
+}
+
+@keyframes ripple-wave {
+  10% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}

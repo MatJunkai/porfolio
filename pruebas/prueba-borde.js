@@ -1,0 +1,1 @@
+const expand = document.querySelector('.expand');

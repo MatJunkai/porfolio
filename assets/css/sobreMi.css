@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
+/* .julius-sans-one-regular {
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+ /*:root {
+        --bg-color: #1a1614;
+        --accent-color: #d17a2d; Naranja quemado/elegante 
+        --text-color: #d1d1d1;
+      }*/
+/* *{
+    width: 100% ;
+    height: auto;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    font-family: "Montserrat", sans-serif;
+    color: var(--text-color);
+} */
+
+/* Resetea solo lo necesario para inyecciones */
+#main-content {
+  position: static !important;
+  width: auto !important;
+}
+
+.container-sobre-mi-principal{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    /* margin-right: 20%; */
+}
+
+.container-img{
+    width: 20%;
+    position: absolute;
+    top: -10%;
+    right: 120%;
+    transform: translate(-50%, -50%);
+}
+.container-img img{
+    width: 100px;
+    height: 180px;
+    
+}
+
+.container-parrafo{
+    width: 100%;
+    /* margin-top: 8%; */
+    align-items: center;
+    justify-content: center;
+    display: block;
+    /* margin-right: 20%; */
+    
+}
+.container-parrafo p{
+    font-size: 15px;
+    line-height: 1.2;
+    font-style: italic;
+    text-align: justify;
+    /* padding-left: 15%;
+    padding-right: 15%; */
+    
+}
+
+.boton-contacto{
+    margin-top: 20px;
+    margin-right:25%;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding:10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: julius sans one, sans-serif;
+    width: 50%;
+    text-align: center;
+}

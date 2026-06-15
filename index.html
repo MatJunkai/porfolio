@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+   
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="border-frame">
+        <div class="side-arc">
+          <!-- <svg viewBox="0 0 100 200" class="border-svg">
+            <path d="M 50,10 A 40,90 0 0 1 50,190" class="draw-path" />
+          </svg> -->
+        </div>
+
+        <nav class="nav-menu">
+          <a href="#" class="nav-item nav-link ripple-button" data-archivo="src/home.html">HOME</a>
+          <a href="" class="nav-item indent-1 nav-link ripple-button" data-archivo="src/trabajosHechos.html">TRABAJOS HECHOS</a>
+          <a href="" class="nav-item indent-2 nav-link ripple-button" data-archivo="src/sobreMi.html">SOBRE MI</a>
+          <a href="" class="nav-item indent-1 nav-link ripple-button" data-archivo="src/contacto.html">CONTACTO</a>
+          <a href="" class="nav-item nav-link ripple-button" data-archivo="src/habilidades.html">HABILIDADES</a>
+        </nav>
+
+        <!-- Contenedor principal para secciones inyectadas -->
+        <main class="container-include-seccion" id="main-content"></main>
+          
+        
+        
+        <!-- Bloque de descripción separado para evitar conflictos -->
+        <div class="description-block">
+          <!-- Aquí va el contenido descriptivo estático si es necesario -->
+        </div>
+        <!-- comenzaria el footer -->
+        <div class="sidebar-left">
+          <span class="vertical-text">PORFOLIO</span>
+        </div>
+        <div>
+          <div class="container-icons">
+            
+            <!-- incluir contenidos en los enlaces -->
+            <a href=""
+              ><img src="assets/img/mail-icon.png" alt="mail-icon"
+            /></a>
+            <a href="">
+              <img src="assets/img/icons8-linkedin-50.png" alt="linkedin-icon"
+            /></a>
+            <a href=""
+              ><img class="git-icon" src="assets/img/github.png" alt="git-icon"
+            /></a>
+          </div>
+        </div>
+
+        <div class="bottom-right-logo">
+          <div class="logoContainer">
+            <img src="assets/img/logoBlanco.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- script de navegación inclusiva -->
+    <script src="assets/js/claseMostrar.js"></script>
+    <script src="assets/js/carrousel-noria.js" defer></script>
+    <script src="assets/js/lightBox.js" defer></script>
+     <script src="assets/js/ripple-effect.js"></script>
+    <!-- los siguientes archivos solo son necesarios si se muestran secciones estáticas
+         directamente desde su HTML; pueden eliminarse si todo se inyecta dinámicamente -->
+    <!-- <script src="assets/js/trabajosHechos.js"></script> -->
+    <!-- <script src="assets/js/sobreMi.js"></script>
+    <script src="assets/js/contacto.js"></script>
+    <script src="assets/js/habilidades.js"></script>
+    <script src="assets/js/carrousel-noria.js"></script>
+    <script src="assets/js/lightBox.js"></script> -->
+    
+  </body>
+</html>

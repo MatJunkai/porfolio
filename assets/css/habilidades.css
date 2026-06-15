@@ -1,0 +1,79 @@
+/* Estilos globales vienen de styles.css - NO DUPLICAR */
+
+      .main-container-hab{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: 10%;
+
+        /* position: relative; */
+      }
+
+       .section-progamacion{
+        width: 100%;
+        display: block; 
+        margin-bottom: 20px;
+        padding-left: 30%;
+
+      }
+        
+
+      .section-soft-skills{
+        width: 100%;
+        display: block;
+        padding-left: 10%;
+        margin-top: 2%;
+      } 
+
+      .title-name{
+        font-weight: bold;
+        font-size: x-large;
+      }
+
+
+      .cursive-name{
+        font-style: italic;
+      }
+
+      .container-img{
+        margin-top: 3px;
+        border-radius: 15px;
+        width: fit-content;
+        background-color: white;
+        padding-left:10px;
+        padding-right: 10px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container-img img{
+        padding-top:8px;
+        padding-bottom: 8px;
+        margin-right:3px ;
+      }
+
+      .main-container-hab h2{
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+
+      .section-soft-skills li{
+        font-style: italic;
+      }
+
+      /*.container-lenguaje{
+        border-top: 3px var(--accent-color) solid;
+        border-top: ;
+        border-left: 3px var(--accent-color) solid;
+        padding-left: 20px;
+        animation-bor: ;
+      }*/
+      #main-content{
+        width: 50%;
+        margin-top: 10px;
+        align-content: center;
+        text-align: left;
+        text-justify: left;
+        
+      }

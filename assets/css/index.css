@@ -1,0 +1,295 @@
+:root {
+        --bg-color: #1a1614;
+        --accent-color: #d17a2d; /* Naranja quemado/elegante */
+        --text-color: #d1d1d1;
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: var(--bg-color);
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-color);
+        overflow: hidden;
+        background: repeating-linear-gradient(90deg, #0002 0 1px, #0000 0 5vw) -2.5vw 0 /
+      100% 60%,
+    linear-gradient(#0002, #0000 30% 70%, #0001) 50% 0% / 100% 60%,
+    linear-gradient(#2d2420 0 0) 50% 0% / 5vw 60%,
+    linear-gradient(#2a2218 0 0) 50% 0% / 15vw 60%,
+    linear-gradient(#262018 0 0) 50% 0% / 25vw 60%,
+    linear-gradient(#222018 0 0) 50% 0% / 35vw 60%,
+    linear-gradient(#1e1a14 0 0) 50% 0% / 45vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 55vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 65vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 75vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 85vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 95vw 60%,
+    linear-gradient(#1a1614 0 0) 50% 0% / 105vw 60%,
+    radial-gradient(100vw 50vw, #0002, #0000),
+    conic-gradient(
+        from 170.5deg at 50% calc(60% - 14.8vw),
+        #2d2420 19deg,
+        #0000 0
+      )
+      0 100% / 100vw 100%,
+    conic-gradient(
+      from 153deg at 50% calc(60% - 14.8vw),
+      #2a2218 54deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from 140deg at 50% calc(60% - 14.8vw),
+      #262018 80deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from 130deg at 50% calc(60% - 14.8vw),
+      #222018 100deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from 123deg at 50% calc(60% - 14.8vw),
+      #1e1a14 114deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from 118.5deg at 50% calc(60% - 14.8vw),
+      #1a1614 123deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from 114.5deg at 50% calc(60% - 14.8vw),
+      #1a1614 131deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from 111.5deg at 50% calc(60% - 14.8vw),
+      #1a1614 137deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from 109.2deg at 50% calc(60% - 14.8vw),
+      #1a1614 141.6deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from 107.3deg at 50% calc(60% - 14.8vw),
+      #1a1614 145.3deg,
+      #0000 0
+    ),
+    #1a1614;
+  background-repeat: no-repeat;
+      }
+
+      .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      /* El cuadro naranja que enmarca todo */
+      .border-frame {
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--accent-color);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-x: hidden;
+      }
+
+      /* El círculo/arco de la izquierda */
+      .side-arc {
+        position: absolute;
+        left: -150px;
+        top: 15%;
+        width: 300px;
+        height: 350px;
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      /* Menú de Navegación */
+      .nav-menu {
+        position: relative;
+        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        z-index: 10;
+        bottom: 10%;
+        background-color: transparent;
+        width: fit-content;
+      }
+      .nav-menu a {
+        margin-bottom: 3%;
+      }
+
+      .nav-item {
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        transition: color 0.3s;
+        width: fit-content;
+      }
+
+      .nav-item:hover {
+        color: var(--accent-color);
+      }
+      /* RIPPLE EFFECT - Efecto de ondas al hacer click */
+
+.ripple-button {
+  position: relative;
+  overflow: visible;
+}
+
+.ripple-button .ripple-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  /* background-color: rgba(255, 250, 250, 0.2); */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  
+}
+
+.ripple-button .ripple-bg::before,
+.ripple-button .ripple-bg::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  content: "";
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0;
+  pointer-events: none;
+  
+}
+
+.ripple-button:hover .ripple-bg {
+  background-color: rgba(255, 255, 255, 0.0.1);
+  background-size: 100px 100px;
+  
+}
+
+/* CLASE ACTIVADORA - Se agrega cuando se hace click */
+.ripple-bg.active::before {
+  animation: ripple-wave 1s ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.ripple-bg.active::after {
+  animation: ripple-wave 1s ease-in-out;
+  animation-delay: 0.3s;
+}
+
+@keyframes ripple-wave {
+  10% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+    
+
+      /* Indentación escalonada del menú */
+      .indent-1 {
+        margin-left: 30px;
+      }
+      .indent-2 {
+        margin-left: 60px;
+      }
+
+      /* Bloque de texto inferior derecho */
+      /* esta clase esta mal, hay que arreglar para que no se descoloquen los ojetos inyectados */
+      .description-text {
+        position: absolute;
+        bottom: 80px;
+        right: 50px;
+        width: 250px;
+        text-align: right;
+        font-size: 0.7rem;
+        line-height: 1.6;
+        letter-spacing: 1px;
+        opacity: 0.8;
+      }
+
+      /* Barra lateral con "PORFOLIO" */
+      .sidebar-left {
+        position: absolute;
+        bottom: 20px;
+        left: -2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .vertical-text {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+        padding-bottom: 20px;
+        position:absolute;
+        right: 0px;
+        bottom: -10px;
+      }
+
+     
+
+      .bottom-right-logo {
+        position: absolute;
+        bottom: 80px;
+        right: 70px;
+      }
+      .container-icons {
+        display: flex;
+        position: fixed;
+        bottom: 18px;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-left:1%;
+        margin-bottom: 5px;
+      }
+      .container-icons img{
+        width: 18px;
+        max-height: 18px;
+ 
+      }
+      .git-icon{
+        height: 15px;
+      }
+      .logoContainer img {
+        position: fixed;
+        width: 60px;
+        
+      }
+
+     .seccion-include{
+      display: block;
+     }
+
+     #main-content{
+      display: block;
+     }
