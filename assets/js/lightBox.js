@@ -4,6 +4,7 @@ function initLightbox() {
     const links = document.querySelectorAll('.lightbox-link');
     const overlay = document.getElementById('lightbox-overlay');
     const lightboxImg = document.getElementById('lightbox-image');
+    const lightboxDescription = document.getElementById('lightbox-description');
     if (!overlay || !lightboxImg) return;
 
     // limpiar listeners viejos: establecer onclick nulo y reemplazar enlaces
@@ -15,9 +16,29 @@ function initLightbox() {
         newLink.addEventListener('click', function(e) {
             e.preventDefault();
             const imgSrc = this.getAttribute('href');
-            // actualizar la misma imagen que hay en el DOM
-            const imgEl = document.getElementById('lightbox-image');
-            if (imgEl) imgEl.src = imgSrc;
+            
+            // Buscar la descripción en el div padre (divImg)
+            const divImg = this.closest('.divImg');
+            let description = '';
+            
+            if (divImg) {
+                const spanDesc = divImg.querySelector('.container-span-description span');
+                if (spanDesc) {
+                    description = spanDesc.textContent.trim();
+                }
+            }
+            
+            // actualizar la imagen del lightbox
+            if (lightboxImg) {
+                lightboxImg.src = imgSrc;
+                lightboxImg.alt = 'Imagen ampliada';
+                lightboxImg.style.display = 'block';
+                lightboxImg.style.opacity = '1';
+            }
+            
+            // actualizar la descripción del lightbox
+            if (lightboxDescription) lightboxDescription.textContent = description;
+            
             overlay.classList.add('lightbox-active');
         });
     });

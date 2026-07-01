@@ -475,56 +475,242 @@ html {
   right: -60px;
 }
 
-
-/* LIGHT BOX */
-/* lightbox */
-
-.lightbox-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
+/* Trabajos hechos */
+.seccion-trabajos-hechos{
+  position: relative;
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: row-reverse;
+  
 }
+/* incluir imagen de fondo para cada contenedor */
+      .seccion-trabajos-hechos .contenedor-inclinado {
+        background-image: url(/assets/img/diseñosMarca/logo-japanese-logo.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
 
+      /* contenedor principal */
+      .seccion-trabajos-hechos .containerImg {
+        width: 100%;
+        display: none;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
 
-.lightbox-overlay.lightbox-active {
-  display: block;
-}
+      /* Contenedor principal Flexbox */
+      .seccion-trabajos-hechos .galeria-inclinada {
+        display: flex;
+        width: 100%;
+        max-width: 900px;
+        /* Ajusta según el diseño de tu web */
+        height: 400px;
+        gap: 10px;
+        /* Separación entre las columnas */
+      }
 
-.container-span-description {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-  bottom: 10px;
-  font-family: 'Jost';
+      /* Estado base de cada contenedor */
+      .seccion-trabajos-hechos .contenedor-inclinado {
+        flex: 1;
+        /* Todos ocupan exactamente la misma fracción de espacio al inicio */
+        background-color: #d3d3d3;
 
-}
+        /* clip-path usando calc() para mantener el ángulo idéntico sin importar el ancho */
+        clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
 
-.container-span-description span {
-  /* text-align: top; */
-  /* text-justify: top; */
-  font-family: 'Jost';
+        transition: flex 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* Animación muy fluida */
+        cursor: pointer;
 
-}
+        /* Estilos internos */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        /* Evita que el contenido desborde al encogerse */
+      }
 
-.lightbox img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  max-width: 800px;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  margin-bottom: 2%;
-}
+      /* --- LA MAGIA DEL HOVER --- */
+
+      /* Solo aplica el efecto de hover cuando la galería no está fijada por click */
+      .seccion-trabajos-hechos .galeria-inclinada:not(.fijado):hover .contenedor-inclinado {
+        flex: 0.5;
+      }
+
+      .seccion-trabajos-hechos .galeria-inclinada:not(.fijado) .contenedor-inclinado:hover {
+        flex: 3;
+      }
+
+      /* --- CLASES PARA EL CLICK (Añadidas por JS) --- */
+      .seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado {
+        flex: 0.5;
+        transition: none;
+      }
+
+      .seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado.activo {
+        flex: 0 0 100%;
+        transition: none;
+      }
+
+      /* LIGHT BOX */
+      /* lightbox */
+
+      .seccion-trabajos-hechos .lightbox-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 2rem;
+        box-sizing: border-box;
+      }
+
+      .seccion-trabajos-hechos .lightbox {
+        position: relative;
+        width: min(90vw, 900px);
+        height: min(85vh, 700px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+      }
+
+      .seccion-trabajos-hechos .lightbox-overlay.lightbox-active {
+        display: flex;
+      }
+
+      .seccion-trabajos-hechos .container-span-description {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        bottom: 10px;
+        font-family: 'Jost';
+        display: none;
+      }
+
+      /* Solo mostrar el span dentro del lightbox cuando está activo */
+      .seccion-trabajos-hechos .lightbox-overlay.lightbox-active .container-span-description {
+        display: block;
+      }
+
+      .seccion-trabajos-hechos .container-span-description span {
+        /* text-align: top; */
+        /* text-justify: top; */
+        font-family: 'Jost';
+        color: white;
+      }
+
+      .seccion-trabajos-hechos .lightbox img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+        object-fit: contain;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        pointer-events: auto;
+        background: transparent;
+      }
+
+      .seccion-trabajos-hechos .imgZoom {
+        cursor: pointer;
+      }
+
+      .seccion-trabajos-hechos .galeria-card {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        /* background: #222; */
+        color: white;
+        /* border-radius: 50%; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        left: 50%;
+        top: 50%;
+        transform-origin: center center;
+        opacity: 0.5;
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+        overflow: hidden;
+        pointer-events: auto;
+
+      }
+
+      .seccion-trabajos-hechos .galeria-card a {
+        cursor: pointer;
+        pointer-events: none;
+      }
+
+      .seccion-trabajos-hechos .galeria-card a img {
+        max-width: 200px;
+        cursor: pointer;
+        pointer-events: none;
+      }
+
+      .seccion-trabajos-hechos .galeria-card.active {
+        opacity: 1;
+        /* Eliminamos el transform del CSS para que no choque con el de JS */
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        /* Opcional: un brillo en lugar de escala */
+      }
+
+      /* Estilos para el botón de cierre del lightbox */
+      .seccion-trabajos-hechos .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        transition: transform 0.2s ease;
+        pointer-events: auto;
+      }
+
+      .seccion-trabajos-hechos .lightbox-close:hover {
+        transform: scale(1.2);
+      }
+      .seccion-trabajos-hechos .divImg {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        overflow: hidden;
+      }
+
+      .seccion-trabajos-hechos .divImg a {
+        display: inline-flex;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+      }
+
+      .seccion-trabajos-hechos .divImg img {
+        display: block;
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+        object-fit: cover;
+      }
 
 
 /* .textoInformativo{
