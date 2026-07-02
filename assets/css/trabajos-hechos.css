@@ -149,10 +149,12 @@
 
 }
 
-.container-span-description span{
+.container-span-description p,
+.container-span-description > div{
   /* text-align: top; */
   /* text-justify: top; */
   font-family: 'Jost';
+  margin: 0 0 0.5rem;
 
 }
 

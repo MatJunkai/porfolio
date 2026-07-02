@@ -497,6 +497,7 @@ html {
         display: none;
         grid-template-columns: repeat(5, 1fr);
         gap: 10px;
+        
       }
 
       /* Contenedor principal Flexbox */
@@ -508,6 +509,7 @@ html {
         height: 400px;
         gap: 10px;
         /* Separación entre las columnas */
+        
       }
 
       /* Estado base de cada contenedor */
@@ -529,6 +531,7 @@ html {
         justify-content: center;
         overflow: hidden;
         /* Evita que el contenido desborde al encogerse */
+        background-color: rgba(209, 122, 45, 0.1);
       }
 
       /* --- LA MAGIA DEL HOVER --- */
@@ -536,21 +539,28 @@ html {
       /* Solo aplica el efecto de hover cuando la galería no está fijada por click */
       .seccion-trabajos-hechos .galeria-inclinada:not(.fijado):hover .contenedor-inclinado {
         flex: 0.5;
+        background-color: rgba(209, 122, 45, 0.1);
+
       }
 
       .seccion-trabajos-hechos .galeria-inclinada:not(.fijado) .contenedor-inclinado:hover {
         flex: 3;
+        background-color: rgba(209, 122, 45, 0.1);
+
       }
 
       /* --- CLASES PARA EL CLICK (Añadidas por JS) --- */
       .seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado {
         flex: 0.5;
         transition: none;
+        background-color: rgba(209, 122, 45, 0.1);
       }
 
       .seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado.activo {
         flex: 0 0 100%;
         transition: none;
+        background-color: rgba(209, 122, 45, 0.1);
+
       }
 
       /* LIGHT BOX */
@@ -600,11 +610,13 @@ html {
         display: block;
       }
 
-      .seccion-trabajos-hechos .container-span-description span {
+      .seccion-trabajos-hechos .container-span-description p,
+      .seccion-trabajos-hechos .container-span-description > div {
         /* text-align: top; */
         /* text-justify: top; */
         font-family: 'Jost';
         color: white;
+        margin: 0 0 0.5rem;
       }
 
       .seccion-trabajos-hechos .lightbox img {

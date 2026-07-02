@@ -22,9 +22,12 @@ function initLightbox() {
             let description = '';
             
             if (divImg) {
-                const spanDesc = divImg.querySelector('.container-span-description span');
-                if (spanDesc) {
-                    description = spanDesc.textContent.trim();
+                const paragraphs = Array.from(divImg.querySelectorAll('.container-span-description p'))
+                    .map(paragraph => paragraph.textContent.trim())
+                    .filter(Boolean);
+
+                if (paragraphs.length) {
+                    description = paragraphs.join('<br><br>');
                 }
             }
             
@@ -37,7 +40,7 @@ function initLightbox() {
             }
             
             // actualizar la descripción del lightbox
-            if (lightboxDescription) lightboxDescription.textContent = description;
+            if (lightboxDescription) lightboxDescription.innerHTML = description;
             
             overlay.classList.add('lightbox-active');
         });
