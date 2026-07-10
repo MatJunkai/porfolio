@@ -144,7 +144,7 @@ html {
 /* Bloque de texto inferior derecho - para contenido estático o inyectado */
 .description-text {
   position: absolute;
-  bottom: 80px;
+  bottom: -300px;
   right: 50px;
   width: 250px;
   text-align: right;
@@ -165,6 +165,11 @@ html {
   line-height: 1.6;
   letter-spacing: 1px;
   opacity: 0.8;
+}
+
+.container-include-seccion {
+  transition: opacity 180ms ease, transform 180ms ease;
+  will-change: opacity, transform;
 }
 
 /* Barra lateral con "PORFOLIO" */
@@ -534,6 +539,16 @@ html {
         background-color: rgba(209, 122, 45, 0.1);
       }
 
+      .seccion-trabajos-hechos .contenedor-inclinado .contenido {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-gutter: stable;
+      }
+
       /* --- LA MAGIA DEL HOVER --- */
 
       /* Solo aplica el efecto de hover cuando la galería no está fijada por click */
@@ -593,6 +608,7 @@ html {
 
       .seccion-trabajos-hechos .lightbox-overlay.lightbox-active {
         display: flex;
+        background: none;
       }
 
       .seccion-trabajos-hechos .container-span-description {

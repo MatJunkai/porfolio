@@ -20,31 +20,55 @@ const links = document.querySelectorAll('.nav-link');
 // Función principal para cargar contenido
 async function cargarSeccion(url) {
     try {
+        // Dejar la transición visible antes de cambiar el contenido.
+        mainContainer.style.opacity = '0.7';
+        mainContainer.style.transform = 'translateY(6px)';
+
+        // Limpiar estado previo de la galería y cerrar el lightbox al cambiar de sección.
+        document.querySelectorAll('.galeria-inclinada').forEach(galeria => {
+            galeria.classList.remove('fijado');
+        });
+        document.querySelectorAll('.contenedor-inclinado').forEach(contenedor => {
+            contenedor.classList.remove('activo');
+            contenedor.style.flex = '';
+            const containerImg = contenedor.querySelector('.containerImg');
+            if (containerImg) containerImg.style.display = 'none';
+        });
+        const overlay = document.getElementById('lightbox-overlay');
+        if (overlay) overlay.classList.remove('lightbox-active');
+
         const respuesta = await fetch(url);
         if (!respuesta.ok) throw new Error("Archivo no encontrado");
         const html = await respuesta.text(); // Convertimos la respuesta a texto/html
         mainContainer.innerHTML = html;      // Inyectamos el HTML
 
-    
-    // ejecutar scripts que vinieran en el HTML (si los hubiera)
+        // Ejecutar scripts que vinieran en el HTML (si los hubiera).
+        // Al volver a cargar la sección, hay que reinyectar los scripts y reinicializar la galería.
         const tmp = document.createElement('div');
         tmp.innerHTML = html;
+
+        document.querySelectorAll('script[data-dynamic-section-script]').forEach(script => script.remove());
+
         tmp.querySelectorAll('script').forEach(old => {
             const s = document.createElement('script');
+            s.setAttribute('data-dynamic-section-script', 'true');
             if (old.src) s.src = old.src;
             else s.textContent = old.textContent;
             document.body.appendChild(s);
         });
 
-        // *opcional*: llamadas de inicialización específicas
+        // Reinit de la galería cuando volvemos a la sección de trabajos para que los nuevos contenedores reciban eventos.
         if (url.endsWith('trabajosHechos.html')) {
-            // el carrusel y el lightbox necesitan elementos recién añadidos
-            if (typeof window.initCarousel === 'function') window.initCarousel();
-            if (typeof window.initLightbox === 'function') window.initLightbox();
+            window.setTimeout(() => {
+                if (typeof window.initContenedoresGaleria === 'function') window.initContenedoresGaleria();
+                if (typeof window.initLightbox === 'function') window.initLightbox();
+            }, 0);
         }
 
-    
-    
+        window.requestAnimationFrame(() => {
+            mainContainer.style.opacity = '1';
+            mainContainer.style.transform = 'translateY(0)';
+        });
     } catch (error) {
         console.error("Error al cargar la sección:", error);
         mainContainer.innerHTML = "<h2>Error 404</h2><p>No se pudo cargar la página.</p>";

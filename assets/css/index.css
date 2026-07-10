@@ -223,7 +223,7 @@
       /* esta clase esta mal, hay que arreglar para que no se descoloquen los ojetos inyectados */
       .description-text {
         position: absolute;
-        bottom: 80px;
+        bottom: -30px;
         right: 50px;
         width: 250px;
         text-align: right;
