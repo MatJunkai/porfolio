@@ -158,6 +158,10 @@
 
 }
 
+.container-span-description em {
+  font-style: italic;
+}
+
 .lightbox img{
     position: absolute;
     top: 50%;

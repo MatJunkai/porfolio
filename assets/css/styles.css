@@ -245,18 +245,21 @@ html {
   box-sizing: border-box;
   position: relative;
 }
-.section-progamacion{
+
+.section-progamacion {
   position: absolute;
   bottom: 50%;
   left: 60%;
   width: 100%;
   display: block;
-  
+
 }
-.container-lenguaje{
+
+.container-lenguaje {
   display: block;
 }
-.container-img-habilidades{ 
+
+.container-img-habilidades {
   width: fit-content;
   margin-top: 3px;
   padding: 5px 10px 1px 10px;
@@ -265,14 +268,15 @@ html {
   background-size: fit-content;
 
 }
-.section-soft-skills{
+
+.section-soft-skills {
   margin-top: 50px;
   position: absolute;
   top: 80%;
   left: 50%;
   width: 100%;
   display: block;
-  
+
 }
 
 /* sobre mi */
@@ -331,7 +335,7 @@ html {
   font-style: italic;
   text-align: justify;
   padding-left: 15%;
-    padding-right: 15%;
+  padding-right: 15%;
 
 }
 
@@ -481,264 +485,286 @@ html {
 }
 
 /* Trabajos hechos */
-.seccion-trabajos-hechos{
+.seccion-trabajos-hechos {
   position: relative;
   width: 90%;
   height: auto;
   display: flex;
   flex-direction: row-reverse;
-  
+
 }
+
 /* incluir imagen de fondo para cada contenedor */
-      .seccion-trabajos-hechos .contenedor-inclinado {
-        background-image: url(/assets/img/diseñosMarca/logo-japanese-logo.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
+.seccion-trabajos-hechos .contenedor-inclinado {
+  background-image: url(/assets/img/diseñosMarca/logo-japanese-logo.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-      /* contenedor principal */
-      .seccion-trabajos-hechos .containerImg {
-        width: 100%;
-        display: none;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 10px;
-        
-      }
+/* contenedor principal */
+.seccion-trabajos-hechos .containerImg {
+  width: 100%;
+  display: none;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
 
-      /* Contenedor principal Flexbox */
-      .seccion-trabajos-hechos .galeria-inclinada {
-        display: flex;
-        width: 100%;
-        max-width: 900px;
-        /* Ajusta según el diseño de tu web */
-        height: 400px;
-        gap: 10px;
-        /* Separación entre las columnas */
-        
-      }
+}
 
-      /* Estado base de cada contenedor */
-      .seccion-trabajos-hechos .contenedor-inclinado {
-        flex: 1;
-        /* Todos ocupan exactamente la misma fracción de espacio al inicio */
-        background-color: #d3d3d3;
+/* Contenedor principal Flexbox */
+.seccion-trabajos-hechos .galeria-inclinada {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  /* Ajusta según el diseño de tu web */
+  height: 400px;
+  gap: 10px;
+  /* Separación entre las columnas */
 
-        /* clip-path usando calc() para mantener el ángulo idéntico sin importar el ancho */
-        clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
+}
 
-        transition: flex 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-        /* Animación muy fluida */
-        cursor: pointer;
+/* Estado base de cada contenedor */
+.seccion-trabajos-hechos .contenedor-inclinado {
+  flex: 1;
+  /* Todos ocupan exactamente la misma fracción de espacio al inicio */
+  background-color: #d3d3d3;
 
-        /* Estilos internos */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        /* Evita que el contenido desborde al encogerse */
-        background-color: rgba(209, 122, 45, 0.1);
-      }
+  /* clip-path usando calc() para mantener el ángulo idéntico sin importar el ancho */
+  clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
 
-      .seccion-trabajos-hechos .contenedor-inclinado .contenido {
-        width: 100%;
-        height: 100%;
-        padding: 1rem;
-        box-sizing: border-box;
-        overflow-y: auto;
-        overflow-x: hidden;
-        scrollbar-gutter: stable;
-      }
+  transition: flex 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Animación muy fluida */
+  cursor: pointer;
 
-      /* --- LA MAGIA DEL HOVER --- */
+  /* Estilos internos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Evita que el contenido desborde al encogerse */
+  background-color: rgba(209, 122, 45, 0.1);
+}
 
-      /* Solo aplica el efecto de hover cuando la galería no está fijada por click */
-      .seccion-trabajos-hechos .galeria-inclinada:not(.fijado):hover .contenedor-inclinado {
-        flex: 0.5;
-        background-color: rgba(209, 122, 45, 0.1);
+.seccion-trabajos-hechos .contenedor-inclinado .contenido {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  border: 2px solid;
+  border-color: var(--accent-color);
+}
 
-      }
+.contenido h2 {
+  font-family: var(--primary-font);
+  text-align: center;
+  padding-top: 10px;
+}
 
-      .seccion-trabajos-hechos .galeria-inclinada:not(.fijado) .contenedor-inclinado:hover {
-        flex: 3;
-        background-color: rgba(209, 122, 45, 0.1);
+/* --- LA MAGIA DEL HOVER --- */
 
-      }
+/* Solo aplica el efecto de hover cuando la galería no está fijada por click */
+.seccion-trabajos-hechos .galeria-inclinada:not(.fijado):hover .contenedor-inclinado {
+  flex: 0.5;
+  background-color: rgba(209, 122, 45, 0.1);
+  border: 2px solid;
+  border-color: var(--accent-color);
 
-      /* --- CLASES PARA EL CLICK (Añadidas por JS) --- */
-      .seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado {
-        flex: 0.5;
-        transition: none;
-        background-color: rgba(209, 122, 45, 0.1);
-      }
+}
 
-      .seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado.activo {
-        flex: 0 0 100%;
-        transition: none;
-        background-color: rgba(209, 122, 45, 0.1);
+.seccion-trabajos-hechos .galeria-inclinada:not(.fijado) .contenedor-inclinado:hover {
+  flex: 3;
+  background-color: rgba(209, 122, 45, 0.1);
+  border: 2px solid;
+  border-color: var(--accent-color);
 
-      }
+}
 
-      /* LIGHT BOX */
-      /* lightbox */
+/* --- CLASES PARA EL CLICK (Añadidas por JS) --- */
+.seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado {
+  flex: 0.5;
+  transition: none;
+  background-color: rgba(209, 122, 45, 0.1);
+  border: 2px solid;
+  border-color: var(--accent-color);
+}
 
-      .seccion-trabajos-hechos .lightbox-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        padding: 2rem;
-        box-sizing: border-box;
-      }
+.seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado.activo {
+  flex: 0 0 100%;
+  transition: none;
+  background-color: rgba(209, 122, 45, 0.1);
+  border: 2px solid;
+  border-color: var(--accent-color);
 
-      .seccion-trabajos-hechos .lightbox {
-        position: relative;
-        width: min(90vw, 900px);
-        height: min(85vh, 700px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        pointer-events: none;
-      }
+}
 
-      .seccion-trabajos-hechos .lightbox-overlay.lightbox-active {
-        display: flex;
-        background: none;
-      }
+/* LIGHT BOX */
+/* lightbox */
 
-      .seccion-trabajos-hechos .container-span-description {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-        bottom: 10px;
-        font-family: 'Jost';
-        display: none;
-      }
+.seccion-trabajos-hechos .lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 2rem;
+  box-sizing: border-box;
+}
 
-      /* Solo mostrar el span dentro del lightbox cuando está activo */
-      .seccion-trabajos-hechos .lightbox-overlay.lightbox-active .container-span-description {
-        display: block;
-      }
+.seccion-trabajos-hechos .lightbox {
+  position: relative;
+  width: min(90vw, 900px);
+  height: min(85vh, 700px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
 
-      .seccion-trabajos-hechos .container-span-description p,
-      .seccion-trabajos-hechos .container-span-description > div {
-        /* text-align: top; */
-        /* text-justify: top; */
-        font-family: 'Jost';
-        color: white;
-        margin: 0 0 0.5rem;
-      }
+.seccion-trabajos-hechos .lightbox-overlay.lightbox-active {
+  display: flex;
+  background: none;
+}
 
-      .seccion-trabajos-hechos .lightbox img {
-        display: block;
-        width: auto;
-        max-width: 100%;
-        max-height: 100%;
-        height: auto;
-        object-fit: contain;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        pointer-events: auto;
-        background: transparent;
-      }
+.seccion-trabajos-hechos .container-span-description {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  bottom: -220px;
+  /* font-family: var(--primary-font); */
+  display: none;
+}
 
-      .seccion-trabajos-hechos .imgZoom {
-        cursor: pointer;
-      }
+/* Solo mostrar el span dentro del lightbox cuando está activo */
+.seccion-trabajos-hechos .lightbox-overlay.lightbox-active .container-span-description {
+  display: block;
+}
 
-      .seccion-trabajos-hechos .galeria-card {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        /* background: #222; */
-        color: white;
-        /* border-radius: 50%; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        left: 50%;
-        top: 50%;
-        transform-origin: center center;
-        opacity: 0.5;
-        transition:
-          opacity 0.3s,
-          transform 0.3s;
-        overflow: hidden;
-        pointer-events: auto;
+.seccion-trabajos-hechos .container-span-description p,
+.seccion-trabajos-hechos .container-span-description>div {
+  /* text-align: top; */
+  /* text-justify: top; */
+  /* font-family: var(--primary-font); */
+  color: white;
+  margin: 0 0 0.5rem;
+}
 
-      }
+.seccion-trabajos-hechos .container-span-description p em {
+  font-style: italic;
+}
 
-      .seccion-trabajos-hechos .galeria-card a {
-        cursor: pointer;
-        pointer-events: none;
-      }
+.seccion-trabajos-hechos .lightbox img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+  background: transparent;
+}
 
-      .seccion-trabajos-hechos .galeria-card a img {
-        max-width: 200px;
-        cursor: pointer;
-        pointer-events: none;
-      }
+.seccion-trabajos-hechos .imgZoom {
+  cursor: pointer;
+}
 
-      .seccion-trabajos-hechos .galeria-card.active {
-        opacity: 1;
-        /* Eliminamos el transform del CSS para que no choque con el de JS */
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        /* Opcional: un brillo en lugar de escala */
-      }
+.seccion-trabajos-hechos .galeria-card {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* background: #222; */
+  color: white;
+  /* border-radius: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  opacity: 0.5;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  overflow: hidden;
+  pointer-events: auto;
 
-      /* Estilos para el botón de cierre del lightbox */
-      .seccion-trabajos-hechos .lightbox-close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 40px;
-        font-weight: bold;
-        color: white;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-        transition: transform 0.2s ease;
-        pointer-events: auto;
-      }
+}
 
-      .seccion-trabajos-hechos .lightbox-close:hover {
-        transform: scale(1.2);
-      }
-      .seccion-trabajos-hechos .divImg {
-        position: relative;
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        overflow: hidden;
-      }
+.seccion-trabajos-hechos .galeria-card a {
+  cursor: pointer;
+  pointer-events: none;
+}
 
-      .seccion-trabajos-hechos .divImg a {
-        display: inline-flex;
-        width: auto;
-        height: auto;
-        max-width: 100%;
-      }
+.seccion-trabajos-hechos .galeria-card a img {
+  max-width: 200px;
+  cursor: pointer;
+  pointer-events: none;
+}
 
-      .seccion-trabajos-hechos .divImg img {
-        display: block;
-        width: 100%;
-        max-width: 180px;
-        height: auto;
-        object-fit: cover;
-      }
+.seccion-trabajos-hechos .galeria-card.active {
+  opacity: 1;
+  /* Eliminamos el transform del CSS para que no choque con el de JS */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  /* Opcional: un brillo en lugar de escala */
+}
+
+/* Estilos para el botón de cierre del lightbox */
+.seccion-trabajos-hechos .lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.2s ease;
+  pointer-events: auto;
+}
+
+.seccion-trabajos-hechos .lightbox-close:hover {
+  transform: scale(1.2);
+}
+
+.seccion-trabajos-hechos .divImg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.seccion-trabajos-hechos .divImg a {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.seccion-trabajos-hechos .divImg img {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: cover;
+}
 
 
 /* .textoInformativo{
