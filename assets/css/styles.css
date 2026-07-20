@@ -279,6 +279,7 @@ html {
 
 }
 
+
 /* sobre mi */
 
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
@@ -496,9 +497,10 @@ html {
 
 /* incluir imagen de fondo para cada contenedor */
 .seccion-trabajos-hechos .contenedor-inclinado {
-  background-image: url(/assets/img/diseñosMarca/logo-japanese-logo.svg);
-  background-size: cover;
+  /* background-image: url(/assets/img/logotipos/preview.png); */
+  background-size:contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* contenedor principal */
