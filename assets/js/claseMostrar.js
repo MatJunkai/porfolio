@@ -49,20 +49,34 @@ async function cargarSeccion(url) {
 
         document.querySelectorAll('script[data-dynamic-section-script]').forEach(script => script.remove());
 
-        tmp.querySelectorAll('script').forEach(old => {
-            const s = document.createElement('script');
-            s.setAttribute('data-dynamic-section-script', 'true');
-            if (old.src) s.src = old.src;
-            else s.textContent = old.textContent;
-            document.body.appendChild(s);
-        });
+        async function loadDynamicScript(old) {
+            return new Promise((resolve, reject) => {
+                const s = document.createElement('script');
+                s.setAttribute('data-dynamic-section-script', 'true');
+
+                if (old.src) {
+                    s.src = old.src;
+                    s.async = false;
+                    s.onload = resolve;
+                    s.onerror = () => reject(new Error(`Error al cargar script: ${old.src}`));
+                } else {
+                    s.textContent = old.textContent;
+                    resolve();
+                }
+
+                document.body.appendChild(s);
+            });
+        }
+
+        const dynamicScripts = Array.from(tmp.querySelectorAll('script'));
+        for (const script of dynamicScripts) {
+            await loadDynamicScript(script);
+        }
 
         // Reinit de la galería cuando volvemos a la sección de trabajos para que los nuevos contenedores reciban eventos.
         if (url.endsWith('trabajosHechos.html')) {
-            window.setTimeout(() => {
-                if (typeof window.initContenedoresGaleria === 'function') window.initContenedoresGaleria();
-                if (typeof window.initLightbox === 'function') window.initLightbox();
-            }, 0);
+            if (typeof window.initContenedoresGaleria === 'function') window.initContenedoresGaleria();
+            if (typeof window.initLightbox === 'function') window.initLightbox();
         }
 
         window.requestAnimationFrame(() => {

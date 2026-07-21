@@ -105,7 +105,7 @@ html {
 .nav-menu {
   position: absolute;
   left: 15%;
-  bottom: 45%;
+  bottom: 49%;
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -175,12 +175,13 @@ html {
 /* Barra lateral con "PORFOLIO" */
 .sidebar-left {
   position: absolute;
-  bottom: 20px;
-  left: -2px;
+  bottom: 65px;
+  left: 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  z-index: 20;
 }
 
 .vertical-text {
@@ -189,9 +190,10 @@ html {
   font-size: 0.8rem;
   letter-spacing: 5px;
   padding-bottom: 20px;
-  position: absolute;
-  right: 1px;
-  bottom: -10px;
+  /* usar posicionamiento relativo dentro del contenedor para evitar quedar fuera */
+  position: relative;
+  right: auto;
+  bottom: auto;
 }
 
 
@@ -214,13 +216,33 @@ html {
 }
 
 .container-icons img {
-  width: 18px;
-  max-height: 18px;
+  width: 30px;
+  max-height: 30px;
 
 }
+.img-hover {
+  width: 30px;
+  height: 30px;
+}
+.img-hover:hover {
+  content: url(/assets/img/envelope-solid.png);
+  filter: brightness(1.5);
+}
 
-.git-icon {
-  height: 15px;
+.git-icon{
+  width: 23px;
+  height: 23px;
+}
+
+.git-icon:hover {
+  content: url(/assets/img/icons8-github-24-full.png);
+  filter: brightness(1.5);
+}
+
+.linkedin-hover:hover {
+  content: url(/assets/img/linkedin-brands-solid-full.png);
+  filter: brightness(1.5);
+  overflow: hidden;
 }
 
 .logoContainer img {
@@ -249,10 +271,13 @@ html {
 .section-progamacion {
   position: absolute;
   bottom: 50%;
-  left: 60%;
+  left: 30%;
   width: 100%;
   display: block;
 
+}
+.container-framework{
+  display: block;
 }
 
 .container-lenguaje {
@@ -272,11 +297,36 @@ html {
 .section-soft-skills {
   margin-top: 50px;
   position: absolute;
-  top: 80%;
-  left: 50%;
+  top: 50%;
+  left: 30%;
   width: 100%;
   display: block;
 
+}
+.title-name{
+  font-size: medium;
+  font-weight: bolder;
+  /* color: var(--accent-color); */
+}
+.lenguaje-name{
+  font-size: small;
+}
+
+.section-exp-laboral{
+  position: relative;
+  width: 50%;
+  display: block;
+  margin:auto;
+  margin-left:890px;
+  
+}
+.section-exp-laboral ul li{
+  padding: 0;
+  margin-left: 100px;
+  margin-bottom: 15px;
+  font-size: small;
+  line-height: 1.6;
+  color: var(--text-color);
 }
 
 
