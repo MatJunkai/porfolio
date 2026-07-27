@@ -225,22 +225,22 @@ html {
   height: 30px;
 }
 .img-hover:hover {
-  content: url(/assets/img/envelope-solid.png);
+  content: url(/assets/img/icons8-circled-envelope-50-full.png);
   filter: brightness(1.5);
 }
 
-.git-icon{
+/* .git-icon{
   width: 23px;
   height: 23px;
-}
+} */
 
 .git-icon:hover {
-  content: url(/assets/img/icons8-github-24-full.png);
+  content: url(/assets/img/icons8-github-50\ full.png);
   filter: brightness(1.5);
 }
 
 .linkedin-hover:hover {
-  content: url(/assets/img/linkedin-brands-solid-full.png);
+  content: url(/assets/img/icons8-linkedin-50\ -full.png);
   filter: brightness(1.5);
   overflow: hidden;
 }
@@ -302,6 +302,14 @@ html {
   width: 100%;
   display: block;
 
+}
+.section-soft-skills ul li {
+  padding: 0;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  font-size: small;
+  line-height: 1.6;
+  color: var(--text-color);
 }
 .title-name{
   font-size: medium;
@@ -686,7 +694,7 @@ html {
 
 .seccion-trabajos-hechos .container-span-description {
   position: absolute;
-  width: 100%;
+  width: 90%;
   text-align: center;
   justify-content: center;
   bottom: -220px;
@@ -711,6 +719,7 @@ html {
 .seccion-trabajos-hechos .container-span-description p em {
   font-style: italic;
 }
+
 
 .seccion-trabajos-hechos .lightbox img {
   display: block;
