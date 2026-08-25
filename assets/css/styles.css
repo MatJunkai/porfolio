@@ -217,7 +217,7 @@ html {
 
 .container-icons img {
   width: 30px;
-  max-height: 30px;
+  height: auto;
 
 }
 .img-hover {
@@ -1108,5 +1108,96 @@ html {
   100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .nav-menu {
+    position: absolute;
+    left: 30%;
+    bottom: 58%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    z-index: 10;
+    background-color: transparent;
+    width: fit-content;
+  }
+  .nav-item{
+    font-size: 1rem;
+  }
+
+  .description-text {
+    font-size: 1rem;
+    right: 30px;
+    width: 450px;
+    bottom: -500px;
+  }
+
+  .bottom-right-logo {
+    bottom: 100px;
+    right: 90px;
+    
+  }
+  .logoContainer img{
+    width: 80px;
+    height: auto;
+  }
+  .container-icons img{
+    width: 50px;
+    height: auto;
+  }
+  .vertical-text{
+    font-size: 1rem;
+    right: 3px;
+  }
+  /* Fin responsive home */
+
+  /* responsive proyectos */
+  .container-include-seccion{
+    position: fixed;
+    top: 700px;
+    right: 190px;
+  }
+  /* .seccion-trabajos-hechos .contenedor-inclinado .contenido{
+    width: 100px;
+  } */
+  
+}
+
+
+
+@media (max-width: 768px) {
+  .nav-menu {
+    margin-left: 5%;
+  }
+
+  .description-text {
+    font-size: 0.6rem;
+    right: 20px;
+  }
+
+  .bottom-right-logo {
+    bottom: 60px;
+    right: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .nav-menu {
+    margin-left: 2%;
+    gap: 15px;
+  }
+
+  .description-text {
+    font-size: 0.5rem;
+    right: 10px;
+    width: 200px;
+  }
+
+  .bottom-right-logo {
+    bottom: 40px;
+    right: 20px;
   }
 }

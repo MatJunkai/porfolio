@@ -1,0 +1,6 @@
+# Ignorar archivos temporales y de sistema en la carpeta pruebas
+*.log
+*.tmp
+*.swp
+Thumbs.db
+.DS_Store

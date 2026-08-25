@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<nav>
+    <div class="menuDesplegable">
+        <button class="botonAbrirMenu" onclick="openMenu()"> 
+            <img id="botonImg" src="/assets/img/logo-menu/hamburger-close.png" alt="Menú"> 
+        </button>
+        <div class="sideNav" id="sideNav">
+            <!-- menu desplegable oculto -->
+             <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PROYECTOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#">SOBRE MI</a></li>
+             </ul>
+        </div>
+    </div>
+</nav>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menuDesplegable {
+    position: fixed;
+    top: 0;
+    right: 0;
+} 
+.botonAbrirMenu {
+    background: none;
+    position: fixed;
+    right: 30px;   
+    top: 0;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: auto;
+}       
+.sideNav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    padding-top: 200px;
+    padding-bottom: 10px;
+    background: linear-gradient(
+  180deg,
+  rgba(36, 30, 23, 0.8),
+  rgba(234, 129, 17, 0.8)
+);
+    border-radius: 0px 0px 0px 20px;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sideNav.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+.sideNav ul li{
+    gap: 10px;
+    list-style: none;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.sideNav ul li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition:color 0.3s ease;
+}
+.sideNav ul li:hover a,
+.sideNav ul li a:hover {
+    color: rgb(28, 25, 19);
+    text-shadow: 0 4px 8px rgba(28, 25, 19, 0.8);
+}
+.changeDisplay{
+    display: none;
+}
+
+    </style>
+    <script>
+        function openMenu() {
+            const sideNav = document.getElementById('sideNav');
+            const imgMenu = document.getElementById('botonImg');
+
+            sideNav.classList.toggle('open');
+
+            if (sideNav.classList.contains('open')) {
+                imgMenu.src = '/assets/img/logo-menu/hamburger-open.png';
+            } else {
+                imgMenu.src = '/assets/img/logo-menu/hamburger-close.png';
+            }
+        }
+    </script>
+</body>
+</html>
