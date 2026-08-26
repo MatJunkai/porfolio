@@ -33,7 +33,6 @@ function initContenedoresGaleria() {
 
   contenedores.forEach(contenedor => {
     contenedor.addEventListener('click', function (e) {
-      e.stopPropagation();
       if (this.classList.contains('activo')) return;
       mostrarContenedor(this);
     });
@@ -41,11 +40,14 @@ function initContenedoresGaleria() {
 
   if (!window.__contenedoresGaleriaClickGuard) {
     document.addEventListener('click', function (e) {
-      const dentroDelContenedor = e.target.closest('.contenedor-inclinado');
+      const dentroDelContenido = e.target.closest('.contenido');
       const dentroDelLightbox = e.target.closest('.lightbox-overlay') || e.target.closest('.lightbox');
 
       if (dentroDelLightbox) return;
-      if (dentroDelContenedor) return;
+      // El clic dentro del contenido no debe plegar el contenedor.
+      // Cualquier clic fuera de `.contenido`, incluso en el área inclinada,
+      // debe cerrar el contenedor activo.
+      if (dentroDelContenido) return;
 
       cerrarTodos();
     });
