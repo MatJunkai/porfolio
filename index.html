@@ -25,8 +25,21 @@
         <a href="" class="nav-item indent-1 nav-link ripple-button" data-archivo="src/trabajosHechos.html">PROYECTOS</a>
         <a href="" class="nav-item indent-1 nav-link ripple-button" data-archivo="src/contacto.html">CONTACTO</a>
         <a href="" class="nav-item nav-link ripple-button" data-archivo="src/habilidades.html">SOBRE MI</a>
-      
       </nav>
+
+      <div class="menuDesplegable">
+        <button class="botonAbrirMenu" aria-label="Abrir menú">
+          <img id="botonImg" src="assets/img/logo-menu/hamburger-close.png" alt="Menú">
+        </button>
+        <div class="sideNav" id="sideNav">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">PROYECTOS</a></li>
+            <li><a href="#">CONTACTO</a></li>
+            <li><a href="#">SOBRE MI</a></li>
+          </ul>
+        </div>
+      </div>
 
       <!-- Contenedor principal para secciones inyectadas -->
       <main class="container-include-seccion" id="main-content"></main>
@@ -60,6 +73,7 @@
   <script src="assets/js/carrousel-noria.js" defer></script>
   <script src="assets/js/lightBox.js" defer></script>
   <script src="assets/js/ripple-effect.js"></script>
+  <script src="assets/js/menuDesplegable.js"></script>
   <!-- los siguientes archivos solo son necesarios si se muestran secciones estáticas
          directamente desde su HTML; pueden eliminarse si todo se inyecta dinámicamente -->
   <!-- <script src="assets/js/trabajosHechos.js"></script> -->
