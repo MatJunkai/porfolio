@@ -163,8 +163,8 @@ html {
 .botonAbrirMenu {
     background: none;
     position: fixed;
-    right: 30px;   
-    top: 0;
+    right: 50px;   
+    top: 15px;
     border: none;
     cursor: pointer;
     padding: 10px;
@@ -183,7 +183,7 @@ html {
     background: linear-gradient(
   180deg,
   rgba(36, 30, 23, 0.8),
-  rgba(234, 129, 17, 0.8)
+  rgba(234, 129, 17, 0.4)
 );
     border-radius: 0px 0px 0px 20px;
     transform: translateX(100%);
@@ -200,9 +200,10 @@ html {
 .sideNav ul li{
     gap: 10px;
     list-style: none;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin-bottom: 40px;
+    margin-left: 10px;
     margin-right: 20px;
+
 }
 .sideNav ul li a{
     display: block;
@@ -325,20 +326,19 @@ html {
 
 /* habilidades */
 .main-container-hab {
-  display: block;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   width: 100%;
   height: auto;
   margin: 0;
   box-sizing: border-box;
-  position: relative;
 }
 
 .section-progamacion {
-  position: absolute;
-  bottom: 50%;
-  left: 30%;
+  display: flex;
+  bottom: 10%;
+  left: 10%;
   width: 100%;
-  display: block;
 
 }
 .container-framework{
@@ -1265,7 +1265,8 @@ html {
 
 /* Habilidades*/
 .main-container-hab{
-  display: block;
+  display: grid;
+  
   width: 100%;
   height: auto;
   margin: 0;
@@ -1297,7 +1298,7 @@ html {
 
   .main-container-hab {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     gap: 2rem;
     padding: 2px 30px 50px;
     box-sizing: border-box;
@@ -1316,16 +1317,16 @@ html {
     width: 100%;
     display: block;
     margin: 0;
-    grid-column: 1;
+    grid-column: 2;
   }
 
-  .section-progamacion,
+   .section-progamacion,
   .section-soft-skills {
-    justify-self: end;
+    justify-self: start;
     width: min(100%, 480px);
     
   }
-
+/*
   .section-soft-skills {
     margin-top: 0;
     padding-left: 800px;
@@ -1338,7 +1339,7 @@ html {
 
   .section-exp-laboral ul li {
     margin-left: 1.2rem;
-  }
+  } */
 
 
 

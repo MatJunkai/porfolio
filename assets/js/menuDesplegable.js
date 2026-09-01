@@ -16,5 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setButtonIcon(isOpen);
     });
 
+    // Cerrar el sideNav cuando se hace click en cualquiera de sus enlaces
+    sideNav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            sideNav.classList.remove('open');
+            setButtonIcon(false);
+        });
+    });
+
     setButtonIcon(false);
 });
