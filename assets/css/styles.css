@@ -1847,7 +1847,7 @@ html {
     bottom: 40px;
     right: 20px;
   }
-}
+
 
 /* CONTACTO */
 .container-contact {
@@ -1901,4 +1901,5 @@ html {
   margin: 0;
   box-sizing: border-box;
   position: relative;
+}
 }
