@@ -153,79 +153,85 @@ html {
   letter-spacing: 1px;
   opacity: 0.8;
 }
+
 /* MENU DESPLEGABLE */
 .menuDesplegable {
   z-index: 2000;
-    position: fixed;
-    top: 0;
-    right: 0;
-    display: none;
-   
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+
 }
+
 .botonAbrirMenu {
-    background: none;
-    position: fixed;
-    right: 50px;   
-    top: 15px;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    margin: 10px;
-    z-index: 1000;
-    width: 50px;
-    height: auto;
-}       
+  background: none;
+  position: fixed;
+  right: 50px;
+  top: 15px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px;
+  z-index: 1000;
+  width: 50px;
+  height: auto;
+}
+
 .sideNav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 220px;
-    padding-top: 200px;
-    padding-bottom: 10px;
-    background: linear-gradient(
-  180deg,
-  rgba(36, 30, 23, 0.8),
-  rgba(234, 129, 17, 0.5)
-  
-);
-    border-radius: 0px 0px 0px 20px;
-    transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-    /* Efecto de difuminado */
-     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Para Safari */
-    
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+  padding-top: 200px;
+  padding-bottom: 10px;
+  background: linear-gradient(180deg,
+      rgba(36, 30, 23, 0.8),
+      rgba(234, 129, 17, 0.5));
+  border-radius: 0px 0px 0px 20px;
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  /* Efecto de difuminado */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* Para Safari */
+
 }
 
 .sideNav.open {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
 }
-.sideNav ul li{
-    gap: 10px;
-    list-style: none;
-    margin-bottom: 40px;
-    margin-left: 10px;
-    margin-right: 20px;
+
+.sideNav ul li {
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-right: 20px;
 
 }
-.sideNav ul li a{
-    display: block;
-    text-decoration: none;
-    color: white;
-    transition:color 0.3s ease;
+
+.sideNav ul li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
 }
+
 .sideNav ul li:hover a,
 .sideNav ul li a:hover {
-    color: rgb(28, 25, 19);
-    text-shadow: 0 4px 8px rgba(28, 25, 19, 0.8);
+  color: rgb(28, 25, 19);
+  text-shadow: 0 4px 8px rgba(28, 25, 19, 0.8);
 }
-.changeDisplay{
-    display: none;
+
+.changeDisplay {
+  display: none;
 }
+
 /* FIN MENU DESPLEGABLE */
 /* Bloque de descripción separado para elementos estáticos */
 .description-block {
@@ -293,10 +299,12 @@ html {
   height: auto;
 
 }
+
 .img-hover {
   width: 30px;
   height: 30px;
 }
+
 .img-hover:hover {
   content: url(/assets/img/icons8-circled-envelope-50-full.png);
   filter: brightness(1.5);
@@ -359,7 +367,7 @@ html {
   grid-column: 1;
   padding-left: 1000px;
   top: 20px;
-  
+
 
 }
 
@@ -370,7 +378,7 @@ html {
   padding-left: 590px;
   top: 20px;
 
-  
+
 }
 
 .section-exp-laboral {
@@ -379,10 +387,10 @@ html {
   width: 90%;
   padding-left: 450px;
   bottom: 5px;
-  
+
 }
 
-.container-framework{
+.container-framework {
   display: block;
 }
 
@@ -408,16 +416,18 @@ html {
   line-height: 1.6;
   color: var(--text-color);
 }
-.title-name{
+
+.title-name {
   font-size: medium;
   font-weight: bolder;
   /* color: var(--accent-color); */
 }
-.lenguaje-name{
+
+.lenguaje-name {
   font-size: small;
 }
 
-.section-exp-laboral ul li{
+.section-exp-laboral ul li {
   padding: 0;
   margin-left: 100px;
   margin-bottom: 15px;
@@ -645,7 +655,7 @@ html {
 /* incluir imagen de fondo para cada contenedor */
 .seccion-trabajos-hechos .contenedor-inclinado {
   /* background-image: url(/assets/img/logotipos/preview.png); */
-  background-size:contain;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1204,6 +1214,8 @@ html {
 /* RESPONSIVE */
 
 @media (max-width: 1024px) {
+
+  /* NAV */
   .nav-menu {
     display: none;
   }
@@ -1223,10 +1235,11 @@ html {
     visibility: visible;
   }
 
-  .nav-item{
+  .nav-item {
     font-size: 1rem;
   }
 
+  /* DESCRIPTION TEXT HOME */
   .description-text {
     position: fixed;
     font-size: 1rem;
@@ -1235,27 +1248,38 @@ html {
     bottom: -300px;
   }
 
+  /* LOGO BOTTOM RIGHT */
   .bottom-right-logo {
     bottom: 100px;
     right: 90px;
-    
+
   }
-  .logoContainer img{
+
+  .logoContainer img {
     width: 80px;
     height: auto;
   }
-  .container-icons img{
+
+  /* ICONOS FOOTER */
+  .container-icons {
+    display: block;
+  }
+
+  .container-icons img {
+    display: block;
     width: 50px;
     height: auto;
   }
-  .vertical-text{
+
+  .vertical-text {
     font-size: 1rem;
     right: 3px;
   }
+
   /* Fin responsive home */
 
   /* PROYECTOS RESPONSIVE */
-  .container-include-seccion{
+  .container-include-seccion {
     /* padding-top:400px ; */
     /* padding-left: 60px; */
     position: relative;
@@ -1264,300 +1288,557 @@ html {
     /* top: 700px; */
     margin: auto;
     flex-direction: row-reverse;
+
   }
 
-  .container-include-seccion:has(.lightbox-overlay.lightbox-active) {
-    z-index: 1000;
-  }
-
- 
-
-  .contenido h2{
-    font-size: 1.5rem;
-    width: 100%;
-    padding: 10px 30px 0 0;
-  }
-  
-  .divImg p{
-    font-size: 1.2rem;
-    width: 100%;
-    text-align: center;}
-
-
-/* CONTACTO */
-
-
-/* Habilidades*/
-.main-container-hab {
-  display: block;
-  width: 100%;
-  max-width: 1200px;
-  height: auto;
-  margin: 0 auto;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.section-progamacion,
-.section-soft-skills,
-.section-exp-laboral {
-  position: relative;
-  width: 100%;
-  display: block;
-  margin: 0 0 2rem;
-  padding: 0;
-}
-
-.container-lenguaje h2 {
-  font-size: 1.5rem;
-}
-
-.lenguaje-name {
-  font-size: 1.2rem;
-}
-
-.section-progamacion,
-.section-soft-skills,
-.section-exp-laboral {
-  left: auto;
-  top: auto;
-  bottom: auto;
-}
-
-.title-name {
-  font-size: 1.5rem;
-  padding: 0;
-}
-
-.section-soft-skills ul li {
-  font-size: 1.1rem;
-  line-height: 1.1;
-}
-
-.section-exp-laboral {
-  padding-left: 0;
-  padding-top: 0;
-  height: auto;
-  width: 100%;
-}
-
-.section-exp-laboral ul li {
-  margin-left: 25px;
-}
-
-.lista-trabajos {
-  padding-left: 0;
-}
-
-.lista-trabajos li h3,
-.lista-trabajos li span,
-.lista-trabajos li p {
-  font-size: 1.1rem;
-}
-
-}
-@media (max-width: 768px) {
-  .nav-menu {
-    margin-left: 5%;
-  }
-
-  .description-text {
-    font-size: 0.6rem;
-    right: 20px;
-  }
-
-  .bottom-right-logo {
-    bottom: 60px;
-    right: 30px;
-  }
-
-  .description-text {
-    position: fixed;
-    font-size: 1rem;
-    left: 1%;
-    width: 450px;
-    bottom: -300px;
-  }
-
-  .bottom-right-logo {
-    bottom: 100px;
-    right: 90px;
-    
-  }
-  .logoContainer img{
-    width: 80px;
-    height: auto;
-  }
-  .container-icons img{
-    width: 50px;
-    height: auto;
-  }
-  .vertical-text{
-    font-size: 1rem;
-    right: 3px;
-  }
-  /* Fin responsive home */
-
-  /* PROYECTOS RESPONSIVE */
-  .container-include-seccion{
-    /* padding-top:400px ; */
-    /* padding-left: 60px; */
+  .seccion-trabajos-hechos {
     position: relative;
-    /* will-change desactiva el apilamiento */
-    will-change: auto;
-    /* top: 700px; */
-    margin: auto;
-    flex-direction: row-reverse;
+    width: 100%;
   }
 
   .container-include-seccion:has(.lightbox-overlay.lightbox-active) {
     z-index: 1000;
   }
 
-  .contenido h2{
+
+
+  .contenido h2 {
     font-size: 1.5rem;
     width: 100%;
     padding: 10px 30px 0 0;
   }
-  
-  .divImg p{
+
+  .divImg p {
     font-size: 1.2rem;
     width: 100%;
     text-align: center;
   }
 
 
-/* CONTACTO */
+  /* CONTACTO */
 
-
-/* Habilidades*/
-.main-container-hab {
-  display: block;
-  width: 100%;
-  max-width: 768px;
-  height: 90vh;
-  margin: 0;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.section-progamacion,
-.section-soft-skills,
-.section-exp-laboral {
-  width: 100%;
-  display: block;
- 
-}
-.section-progamacion div{
-  margin-left: 10px;
-}
-
-.section-progamacion h2 {
-  font-size: 1rem;
-  /* margin-left:10px ;   */
-}
-
-.lenguaje-name {
-  font-size: 0.8rem;
-  /* margin-left: 10px; */
-}
-
-.container-img-habilidades {
-  display: flex;
-  padding: 5px 10px 5px 10px;
-  /* margin-left: 10px; */
-}
-
-.container-img-habilidades img {
-  width: 20px;
-  height: auto;
-}
-
-.container-img-habilidades .img-lenguajes {
-  width: 50px;
-  height: auto;
-}
-
-.title-name {
-  font-size: 1rem;
-  width: fit-content;
-}
-.section-soft-skills {
-  margin-left: 20px;
- 
-}
-
-.section-soft-skills ul li {
-  font-size: 0.7rem;
-  line-height: 1.1;
-}
-
-.section-exp-laboral {
-  padding-left: 0;
-  padding-top: 0;
-  height: auto;
-  width: 100%;
-}
-.section-exp-laboral{
-  margin-left: 20px;
-  width: 90%;
-}
-.section-exp-laboral h2 {
-  font-size: 1rem;
-  padding: 0;
-}
-.section-exp-laboral ul{
-  padding-bottom: 20px;
-}
-
-.section-exp-laboral ul li {
-  margin-left: 20px;
-}
-
-.lista-trabajos {
-  padding-left: 0;
-  margin-bottom: 20px;
-}
-
-.lista-trabajos li h3,
-.lista-trabajos li span,
-.lista-trabajos li p {
-  font-size: 0.7rem;
-}
-.container-icons {
-  display: grid;
-  position: fixed;
-  bottom: 18px;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  margin-left: 1.%;
-  margin-bottom: 5px;
-}
-.container-icons img {
-  width: 25px;
-  height: auto;
-  backdrop-filter: blur(5px);
-}
-
-
-.logoContainer img{
-  width: 50px;
-  height: auto;
-}
+  .container-contact {
+    position: absolute;
+    right: -1px;
+    top: -190px;
+  }
 
 
 
+  /* SOBRE MI*/
+  .main-container-hab {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto 0 60px;
+    box-sizing: border-box;
+    position: relative;
+    top: 100px;
+  }
+
+  .section-progamacion,
+  .section-soft-skills,
+  .section-exp-laboral {
+    position: relative;
+    width: fit-content;
+    display: block;
+    /* margin: 0 0 2rem; */
+    padding: 0;
+  }
+
+  .container-lenguaje h2 {
+    font-size: 1.5rem;
+  }
+
+  .lenguaje-name {
+    font-size: 1.2rem;
+  }
+
+  .section-progamacion {
+    margin-bottom: 40px;
+  }
+
+
+  .title-name {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .section-soft-skills {
+    margin-bottom: 60px;
+  }
+
+  .section-soft-skills ul li {
+    font-size: 1.1rem;
+    line-height: 1.1;
+    margin-bottom: 3px;
+    width: fit-content;
+  }
+
+  .section-exp-laboral {
+    padding-left: 0;
+    padding-top: 0;
+    height: auto;
+    width: 90%;
+  }
+
+  .section-exp-laboral ul {
+    padding-bottom: 20px;
+  }
+
+  .section-exp-laboral ul li {
+    margin-left: 25px;
+  }
+
+  .lista-trabajos {
+    padding-left: 0;
+  }
+
+  .lista-trabajos li h3,
+  .lista-trabajos li span,
+  .lista-trabajos li p {
+    font-size: 1.1rem;
+  }
 
 }
+
+@media (max-width: 768px) {
+  .nav-menu {
+    margin-left: 5%;
+  }
+
+  .description-text {
+    right: 20px;
+    position: fixed;
+    font-size: 1.5rem;
+    left: -10px;
+    width: 450px;
+    bottom: -300px;
+  }
+
+  .bottom-right-logo {
+    bottom: 100px;
+    right: 90px;
+
+  }
+
+  .logoContainer img {
+    width: 80px;
+    height: auto;
+  }
+
+  .container-icons img {
+    width: 50px;
+    height: auto;
+  }
+
+  .vertical-text {
+    font-size: 1rem;
+    right: 3px;
+  }
+
+  /* Fin responsive home */
+
+  /* PROYECTOS RESPONSIVE */
+  .container-include-seccion {
+    /* padding-top:400px ; */
+    /* padding-left: 60px; */
+    position: relative;
+    /* will-change desactiva el apilamiento */
+    will-change: auto;
+    /* top: 700px; */
+    margin: auto;
+    flex-direction: row-reverse;
+  }
+
+  .container-include-seccion:has(.lightbox-overlay.lightbox-active) {
+    z-index: 1000;
+  }
+
+  .contenido h2 {
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 10px 30px 0 0;
+  }
+
+  .divImg p {
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+
+
+  /* CONTACTO */
+
+
+  /* Habilidades*/
+  .main-container-hab {
+    display: block;
+    width: 100%;
+    max-width: 768px;
+    height: 90vh;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .section-progamacion,
+  .section-soft-skills,
+  .section-exp-laboral {
+    width: 100%;
+    display: block;
+
+  }
+
+  .section-progamacion div {
+    margin-left: 10px;
+  }
+
+  .section-progamacion h2 {
+    font-size: 1rem;
+    /* margin-left:10px ;   */
+  }
+
+  .lenguaje-name {
+    font-size: 0.8rem;
+    /* margin-left: 10px; */
+  }
+
+  .container-img-habilidades {
+    display: flex;
+    padding: 5px 10px 5px 10px;
+    /* margin-left: 10px; */
+  }
+
+  .container-img-habilidades img {
+    width: 20px;
+    height: auto;
+  }
+
+  .container-img-habilidades .img-lenguajes {
+    width: 50px;
+    height: auto;
+  }
+
+  .title-name {
+    font-size: 1rem;
+    width: fit-content;
+  }
+
+  .section-soft-skills {
+    margin-left: 20px;
+
+  }
+
+  .section-soft-skills ul li {
+    font-size: 0.7rem;
+    line-height: 1.1;
+  }
+
+  .section-exp-laboral {
+    padding-left: 0;
+    padding-top: 0;
+    height: auto;
+    width: 100%;
+  }
+
+  .section-exp-laboral {
+    margin-left: 20px;
+    width: 90%;
+  }
+
+  .section-exp-laboral h2 {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .section-exp-laboral ul {
+    padding-bottom: 20px;
+  }
+
+  .section-exp-laboral ul li {
+    margin-left: 20px;
+  }
+
+  .lista-trabajos {
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .lista-trabajos li h3,
+  .lista-trabajos li span,
+  .lista-trabajos li p {
+    font-size: 0.7rem;
+  }
+
+  /* ICONOS FOOTER */
+  .container-icons {
+    display: grid;
+    position: fixed;
+    bottom: 18px;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin-left: 1.%;
+    margin-bottom: 5px;
+  }
+
+  .container-icons img {
+    width: 25px;
+    height: auto;
+    backdrop-filter: blur(5px);
+  }
+
+
+  .logoContainer img {
+    width: 50px;
+    height: auto;
+    position: fixed;
+    right: 25px;
+    bottom: -3px;
+  }
+
+  /* Trabajos hechos */
+  .seccion-trabajos-hechos {
+    position: relative;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+
+  }
+
+  /* incluir imagen de fondo para cada contenedor */
+  .seccion-trabajos-hechos .contenedor-inclinado {
+    /* background-image: url(/assets/img/logotipos/preview.png); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* contenedor principal */
+  .seccion-trabajos-hechos .containerImg {
+    width: 100%;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+
+  }
+
+  /* Contenedor principal Flexbox */
+  .seccion-trabajos-hechos .galeria-inclinada {
+    display: block;
+    width: 100%;
+    margin-bottom: 200px;
+    max-width: 900px;
+    /* Ajusta según el diseño de tu web */
+    height: 400px;
+    gap: 10px;
+    /* Separación entre las columnas */
+
+  }
+
+  /* Estado base de cada contenedor */
+  .seccion-trabajos-hechos .contenedor-inclinado {
+    flex: 1;
+    /* Todos ocupan exactamente la misma fracción de espacio al inicio */
+    background-color: #d3d3d3;
+
+    /* clip-path usando calc() para mantener el ángulo idéntico sin importar el ancho */
+    clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
+
+    transition: flex 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Animación muy fluida */
+    cursor: pointer;
+
+    /* Estilos internos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Evita que el contenido desborde al encogerse */
+    background-color: rgba(209, 122, 45, 0.1);
+    margin-left: 30px;
+  }
+
+  .seccion-trabajos-hechos .contenedor-inclinado .contenido {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    border: 2px solid;
+    border-color: var(--accent-color);
+  }
+
+  .contenido h2 {
+    font-family: var(--primary-font);
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  /* ---  HOVER --- */
+
+  /* Solo aplica el efecto de hover cuando la galería no está fijada por click */
+  .seccion-trabajos-hechos .galeria-inclinada:not(.fijado):hover .contenedor-inclinado {
+    flex: 0.5;
+    background-color: rgba(209, 122, 45, 0.1);
+    border: 2px solid;
+    border-color: var(--accent-color);
+
+  }
+
+
+
+  .seccion-trabajos-hechos .galeria-inclinada:not(.fijado) .contenedor-inclinado:hover {
+    flex: 3;
+    background-color: rgba(209, 122, 45, 0.1);
+    border: 2px solid;
+    border-color: var(--accent-color);
+
+  }
+
+  /* --- CLASES PARA EL CLICK (Añadidas por JS) --- */
+  .seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado {
+    flex: 0.5;
+    transition: none;
+    background-color: rgba(209, 122, 45, 0.1);
+    border: 2px solid;
+    border-color: var(--accent-color);
+  }
+
+  .seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado.activo {
+    flex: 0 0 100%;
+    transition: none;
+    background-color: rgba(209, 122, 45, 0.1);
+    border: 2px solid;
+    border-color: var(--accent-color);
+
+  }
+
+  /* LIGHT BOX */
+  /* lightbox */
+
+  .seccion-trabajos-hechos .lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  .seccion-trabajos-hechos .lightbox {
+    position: relative;
+    width: min(90vw, 900px);
+    height: min(85vh, 700px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+
+  .seccion-trabajos-hechos .lightbox-overlay.lightbox-active {
+    display: flex;
+    background: none;
+    z-index: 1000;
+  }
+
+  .seccion-trabajos-hechos .container-span-description {
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+    bottom: -50px;
+    backdrop-filter: blur(100px);
+    /* font-family: var(--primary-font); */
+    display: none;
+  }
+
+  /* Solo mostrar el span dentro del lightbox cuando está activo */
+  .seccion-trabajos-hechos .lightbox-overlay.lightbox-active .container-span-description {
+    display: block;
+  }
+
+  .seccion-trabajos-hechos .divImg {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* CONTACTO */
+  .container-contact {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding-right: 2px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 200px;
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 350px;
+    height: 300px;
+    perspective: 1000px;
+    margin: 20px;
+    margin-right: 20px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+}
+
 @media (max-width: 480px) {
+
+  /* NAV */
   .nav-menu {
     margin-left: 2%;
     gap: 15px;
   }
 
   .description-text {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     right: 10px;
     width: 200px;
   }
@@ -1566,4 +1847,58 @@ html {
     bottom: 40px;
     right: 20px;
   }
+}
+
+/* CONTACTO */
+.container-contact {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding-right: 2px;
+  align-items: center;
+  justify-content: center;
+  /* margin-right: 200px; */
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 20px;
+  margin-right: 20px;
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTAINER DE HABILIDADES */
+.main-container-hab {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  max-width: 768px;
+  height: 90vh;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
 }
