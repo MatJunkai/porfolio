@@ -32,7 +32,25 @@ function initContenedoresGaleria() {
   }
 
   contenedores.forEach(contenedor => {
+    const containerImg = contenedor.querySelector('.containerImg');
+
+    // Hover: muestra el contenido del bloque mientras la galería no está fijada.
+    contenedor.addEventListener('mouseenter', function () {
+      if (galeria.classList.contains('fijado')) return;
+      if (containerImg) containerImg.style.display = 'grid';
+      this.style.flex = '3';
+    });
+
+    contenedor.addEventListener('mouseleave', function () {
+      if (galeria.classList.contains('fijado')) return;
+      if (this.classList.contains('activo')) return;
+      if (containerImg) containerImg.style.display = 'none';
+      this.style.flex = '';
+    });
+
+    // Click: fija el contenedor expandido y mantiene el estado activo.
     contenedor.addEventListener('click', function (e) {
+      e.stopPropagation();
       if (this.classList.contains('activo')) return;
       mostrarContenedor(this);
     });

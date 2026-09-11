@@ -22,12 +22,9 @@ function initLightbox() {
             let description = '';
             
             if (divImg) {
-                const paragraphs = Array.from(divImg.querySelectorAll('.container-span-description p'))
-                    .map(paragraph => paragraph.textContent.trim())
-                    .filter(Boolean);
-
-                if (paragraphs.length) {
-                    description = paragraphs.join('<br><br>');
+                const descriptionNode = divImg.querySelector('.container-span-description');
+                if (descriptionNode) {
+                    description = descriptionNode.innerHTML.trim();
                 }
             }
             
@@ -46,9 +43,24 @@ function initLightbox() {
         });
     });
 
-    overlay.addEventListener('click', function() {
+    overlay.addEventListener('click', function(e) {
+        const clickedLink = e.target.closest('a');
+
+        if (clickedLink) {
+            e.stopPropagation();
+            return;
+        }
+
         this.classList.remove('lightbox-active');
     });
+
+    if (lightboxDescription) {
+        lightboxDescription.addEventListener('click', function(e) {
+            if (e.target.closest('a')) {
+                e.stopPropagation();
+            }
+        });
+    }
 }
 
 window.initLightbox = initLightbox;

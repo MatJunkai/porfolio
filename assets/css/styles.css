@@ -740,6 +740,13 @@ html {
 
 }
 
+/* Hover: revela el contenido del bloque sin necesidad de click */
+.seccion-trabajos-hechos .galeria-inclinada:not(.fijado) .contenedor-inclinado:hover .containerImg,
+.seccion-trabajos-hechos .galeria-inclinada:not(.fijado):hover .contenedor-inclinado .containerImg {
+  display: grid;
+  opacity: 1;
+}
+
 /* --- CLASES PARA EL CLICK (Añadidas por JS) --- */
 .seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado {
   flex: 0.5;
@@ -756,6 +763,11 @@ html {
   border: 2px solid;
   border-color: var(--accent-color);
 
+}
+
+.seccion-trabajos-hechos .galeria-inclinada.fijado .contenedor-inclinado.activo .containerImg {
+  display: grid;
+  opacity: 1;
 }
 
 /* LIGHT BOX */
@@ -805,6 +817,8 @@ html {
 /* Solo mostrar el span dentro del lightbox cuando está activo */
 .seccion-trabajos-hechos .lightbox-overlay.lightbox-active .container-span-description {
   display: block;
+  z-index: 20;
+  pointer-events: auto;
 }
 
 .seccion-trabajos-hechos .container-span-description p,
@@ -820,6 +834,23 @@ html {
   font-style: italic;
 }
 
+.seccion-trabajos-hechos .project-link {
+  position: relative;
+  z-index: 30;
+  pointer-events: auto;
+  color: var(--accent-color);
+  /* text-decoration: underline; */
+  /* text-underline-offset: 0.2rem; */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.seccion-trabajos-hechos .project-link:hover,
+.seccion-trabajos-hechos .project-link:focus-visible {
+  color: var(--text-color);
+  opacity: 1;
+}
 
 .seccion-trabajos-hechos .lightbox img {
   display: block;
