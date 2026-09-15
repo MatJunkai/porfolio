@@ -142,10 +142,14 @@ html {
 }
 
 /* Bloque de texto inferior derecho - para contenido estático o inyectado */
-.description-text {
-  position: absolute;
+.description-text{
+  /* position: absolute;
+  bottom: -300px;*/
+  right: 50px; 
+  position: fixed;
+  width: 100%;
   bottom: -300px;
-  right: 50px;
+  margin-right: 3%;
   width: 250px;
   text-align: right;
   font-size: 0.7rem;
@@ -1272,11 +1276,14 @@ html {
 
   /* DESCRIPTION TEXT HOME */
   .description-text {
+    
     position: fixed;
-    font-size: 1rem;
-    left: 1%;
-    width: 450px;
+    right: -390px;
+    /* left: auto; */
     bottom: -300px;
+    width: min(220px, 42vw);
+    text-align: right;
+    margin-right: 50px;
   }
 
   /* LOGO BOTTOM RIGHT */
@@ -1440,12 +1447,13 @@ html {
   }
 
   .description-text {
-    right: 20px;
     position: fixed;
-    font-size: 1.5rem;
-    left: -10px;
-    width: 450px;
+    right: -390px;
+    left: auto;
     bottom: -300px;
+    width: min(220px, 42vw);
+    text-align: right;
+    margin-right: 140px;
   }
 
   .bottom-right-logo {
@@ -1855,9 +1863,6 @@ html {
     align-items: center;
   }
 
-
-
-
 }
 
 @media (max-width: 480px) {
@@ -1869,9 +1874,13 @@ html {
   }
 
   .description-text {
-    font-size: 0.7rem;
-    right: 10px;
-    width: 200px;
+    position: fixed;
+    right: -300px;
+    left: auto;
+    bottom: -300px;
+    width: min(220px, 42vw);
+    text-align: right;
+    /* margin-right: 140px; */
   }
 
   .bottom-right-logo {
