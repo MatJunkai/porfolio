@@ -1281,9 +1281,10 @@ html {
     right: -390px;
     /* left: auto; */
     bottom: -300px;
-    width: min(220px, 42vw);
+    width: min(290px, 42vw);
     text-align: right;
-    margin-right: 50px;
+    margin-right: 20px;
+    font-size: 1rem;
   }
 
   /* LOGO BOTTOM RIGHT */
